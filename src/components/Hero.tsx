@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import heroVideo from "@/assets/21_20Dragon_20Tail_20Zipline__20Zip_Line__20Zip_20Line.mp4";
+import heroVideo from "@/assets/HeroV.mp4";
 import { Plane, Calendar } from "lucide-react";
 
 const Hero = () => {
