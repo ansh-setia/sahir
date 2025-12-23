@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
-const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const RESEND_API_KEY = Deno.env.get("re_idUP9ELn_DkwpWwJd49gekyMUJbDtHGUC");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -71,7 +71,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Vrishab Voyages <onboarding@resend.dev>",
-        to: ["anshsetia090@gmail.com"],
+        to: ["founder@vvoyages.in"],
         subject: `New Travel Inquiry - ${inquiryData.destination}`,
         html: emailHtml,
       }),
