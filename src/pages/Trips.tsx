@@ -13,10 +13,13 @@ import rajasthan from "@/assets/rajasthan.jpg";
 import delhi from "@/assets/delhi.jpg";
 import southindia from "@/assets/southindia.jpg";
 import thailand from "@/assets/thailand.jpg";
+import Manali from "@/assets/Manali.jpg";
 import singapore from "@/assets/singapore.jpg";
+import Devi from "@/assets/Devi.webp";
 import baku from "@/assets/baku.jpg";
 import azerbaijan from "@/assets/azerbaijan.jpg";
 import dubai from "@/assets/dubai.jpg";
+import Spiti from "@/assets/Spiti.jpg";
 import ooty from "@/assets/ooty.jpg";
 import bali from "@/assets/bali.jpg";
 import rameshwaram from "@/assets/rameshwaram.webp";
@@ -25,13 +28,27 @@ import mauritius from "@/assets/mauritius.jpg";
 import malaysia from "@/assets/malaysia.jpg";
 import maldives from "@/assets/maldives.jpg";
 import kerala from "@/assets/kerala.jpeg";
+import deviPDF from "@/assets/Devis.pdf";
+import himachalPDF from "@/assets/Himachal itinerary.pdf";
+import kashmirPDF from "@/assets/kashmir.pdf";
+import manaliPDF from "@/assets/Manali - kasol.pdf";
+import spitiPDF from "@/assets/Spiti.pdf";
 
+
+const itineraryPDFs: Record<string, string> = {
+  "5 Devi": deviPDF,
+  "Kashmir": kashmirPDF,
+  "Spiti": spitiPDF,
+  "Manali Kasol": manaliPDF,
+};
 const domesticDestinations = [
   { name: "Kashmir", image: kashmir },
   { name: "Ladakh", image: ladakh },
   { name: "Char Dham", image: chardham },
   { name: "Uttarakhand", image: uttarakhand },
-  { name: "Himachal Pradesh", image: himachal },
+  { name: "Spiti", image: Spiti },
+  { name: "Manali Kasol", image: Manali },
+  { name: "5 Devi", image: Devi },
   { name: "Punjab", image: punjab },
   { name: "Rajasthan", image: rajasthan },
   { name: "Delhi", image: delhi },
@@ -58,9 +75,13 @@ const Trips = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleViewItinerary = (destination: string) => {
+  if (itineraryPDFs[destination]) {
+    window.open(itineraryPDFs[destination], "_blank");
+  } else {
     setSelectedDestination(destination);
     setIsModalOpen(true);
-  };
+  }
+};
 
   return (
     <div className="min-h-screen bg-white">
