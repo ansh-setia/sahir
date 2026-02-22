@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import FeedbackSection from "@/components/FeedbackSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -123,6 +124,37 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
+      
+            <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Why Choose <span className="text-accent">Vrishab Voyages</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Experience the difference with our commitment to excellence
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {features.map((feature, index) => (
+              <Card key={index} className="border-none shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105 group">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                    <feature.icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FeedbackSection />
+      
+
       <section className="py-20 bg-secondary/10">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold">
